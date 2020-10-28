@@ -6,7 +6,7 @@ var platform,platform2;
 
 function preload(){
 
-
+  img1=loadImage("polygon_img.png");  
 
 
   
@@ -18,9 +18,10 @@ function setup() {
 engine=Engine.create();
 world=engine.world;
 
-platform= new Support(315,370,210,10)
-platform2=new Support(595,200,210,10)
-
+platform= new Support(315,370,210,10);
+platform2=new Support(595,200,210,10);
+ballsprite=createSprite(10,10,20,20);
+ballsprite.addImage("img1");
   block1=new Blocks(300,345,30,40);
   block2=new Blocks(330,345,30,40);
   block3=new Blocks(360,345,30,40);
@@ -60,10 +61,13 @@ block32=new Blocks(654,135,30,40);
  block37=new Blocks(550,95,30,40);
  block38=new Blocks(595,55,30,40);
   object=new Ball(100,200,10)
+  ground1=new Ground(400,380,810,10)
   
 }
 
 function draw() {
+  ballsprite.x=object.x;
+ballsprite.y=object.y;
   background(0);
   Engine.update(engine);
 platform.display();
@@ -71,6 +75,7 @@ platform2.display();
 block1.display();
 block2.display();
 object.display();
+
 block3.display();
 block4.display();
 block5.display();
@@ -107,4 +112,6 @@ block35.display();
 block36.display();
 block37.display();
 block38.display();
+ground1.display();
+
 }

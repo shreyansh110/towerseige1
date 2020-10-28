@@ -2,9 +2,9 @@ class Ball{
     constructor(x,y,radius){
     var options ={
     
-    'restitution':2,
+    'restitution':4,
     'friction':3,
-    'density':5,
+    'density':25,
     isStatic:false
     
     
@@ -12,10 +12,10 @@ class Ball{
     }
     
     this.body=Bodies.circle(x,y,radius,options);
-  
+this.radius=radius;
     World.add(world,this.body);
-    
-    
+
+   
     
     
     }
@@ -26,8 +26,9 @@ class Ball{
     pis.y=mouseY
     push();
     translate(pis.x,pis.y);
-    ellipseMode(CENTER);
-    ellipse(0,0,this.radius)
+    ellipse(RADIUS);
+    circle(0,0,this.radius)
+  
     pop();
     
     
