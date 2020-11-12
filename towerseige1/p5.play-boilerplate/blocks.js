@@ -4,7 +4,7 @@ class Blocks{
     
     'restitution':1.1,
     'friction':1,
-    'density':3,
+    'density':1,
     isStatic:false
     
     
@@ -27,7 +27,7 @@ class Blocks{
     translate(pas.x,pas.y);
     rectMode(CENTER);
     rect(0,0,this.width,this.height);
-    fill (50,50,50)
+ 
     pop();
     
     

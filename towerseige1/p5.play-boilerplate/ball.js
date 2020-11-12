@@ -2,15 +2,15 @@ class Ball{
     constructor(x,y,radius){
     var options ={
     
-    'restitution':4,
+    'restitution':1,
     'friction':3,
-    'density':25,
+    'density':50,
     isStatic:false
     
     
     
     }
-    
+    this.polygon=loadImage("polygon_img.png");
     this.body=Bodies.circle(x,y,radius,options);
 this.radius=radius;
     World.add(world,this.body);
@@ -22,27 +22,20 @@ this.radius=radius;
     
     display(){
     var pis=this.body.position;
-    pis.x=mouseX
-    pis.y=mouseY
+
+
+pis.x=mouseX
+pis.y=mouseY
+
     push();
-    translate(pis.x,pis.y);
-    ellipse(RADIUS);
-    circle(0,0,this.radius)
-  
+ translate(pis.x,pis.y);
+circle(0,0,this.width,this.height);
+    
+
     pop();
-    
-    
-    
-    
-    
-    
+
     
     }
-    
-    
-    
-    
-    
-    
+ 
     
     }
