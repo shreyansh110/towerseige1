@@ -1,7 +1,8 @@
 const Engine = Matter.Engine;
 const World=Matter.World;
 const Bodies = Matter.Bodies;
-
+const Body=Matter.Body;
+const Constraint=Matter.Constraint
 var platform,platform2;
 
 function preload(){
@@ -49,7 +50,7 @@ block17=new Blocks(300,185,30,40);
  block29=new Blocks(564,135,30,40);
  block30=new Blocks(594,135,30,40);
  block31=new Blocks(624,135,30,40);
-block32=new Blocks(654,135,30,40);
+ block32=new Blocks(654,135,30,40);
  block33=new Blocks(550,95,30,40);
  block34=new Blocks(580,95,30,40);
  block35=new Blocks(610,95,30,40);
@@ -59,8 +60,8 @@ block32=new Blocks(654,135,30,40);
  player =new Ball(100,200,10);
 
   ground1=new Ground(400,380,810,10);
-  slingshot=new rope(this.player,{x:100,y:200});
-}
+  slingshot=new Rope(Ball.body,{x:100,y:200});
+} 
 
 function draw() {
 
@@ -108,7 +109,18 @@ block36.display();
 block37.display();
 block38.display();
 ground1.display();
+slingshot.display();
+
+
+}
+
+function mouseDragged(){
+Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY})
 
 
 
+}
+
+function mouseReleased(){
+  chain.fly();
 }
