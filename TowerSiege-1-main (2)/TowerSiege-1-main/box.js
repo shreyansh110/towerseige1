@@ -5,7 +5,7 @@ var options={
 'restitution':0.4,
 'friction':0.9,
 'density':1.2,
-isStatic:true
+isStatic:false
 
 }
 

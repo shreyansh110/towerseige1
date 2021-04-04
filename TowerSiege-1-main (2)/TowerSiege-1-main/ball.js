@@ -1,14 +1,14 @@
 class Ball{
     constructor(x, y,radius) {
         var options = {
-            'restitution':1.5,
+            'restitution':1.0,
             'friction':0.5,
-            'density':1.0,
-            isStatic:true
+            'density':2.0,
+            isStatic:false
         }
         this.body = Bodies.circle(x, y,radius, options);
         this.radius=radius
-        
+        this.image=loadImage("polygon.png");
         World.add(world, this.body);
       }
       display(){
@@ -17,12 +17,12 @@ class Ball{
         push();
         translate(pos.x,pos.y);
         //rotate(angle);
-        ellipseMode(CENTER);
+        imageMode(CENTER);
         //fill(255);
-        circle(0,0,this.radius);
-
-        this.body.position.x=mouseX;
-        this.body.position.y=mouseY; 
+        image(this.image,0,0,50,70);
+        
+       // this.body.position.x=mouseX;
+    //this.body.position.y=mouseY; 
         pop();
       }
 

@@ -2,11 +2,11 @@ const World=Matter.World;
 const Engine=Matter.Engine;
 const Bodies=Matter.Bodies;
 const Body=Matter.Body;
-const Constraint=Matter.constraint;
+const Constraint=Matter.Constraint;
 
 var thrower;
 function preload(){
-//hexagon=loadImage("polygon.png")
+
 }
 
 
@@ -22,6 +22,7 @@ ground=new Platform(900,785,1800,20);
 
 //ball
 thrower=new Ball(200,500,70);
+
 
 //both platforms
 platform1=new Platform(800,400, 350,20);
@@ -51,7 +52,7 @@ box19=new Box(1570,485,50,70);
 //platform 2 line no.3
 box20=new Box(1470,415,50,70);
 box21=new Box(1520,415,50,70);
-chain=new Slingshot(thrower.body,{x:200,y:100});
+chain=new Slingshot(thrower.body,{x:200,y:350});
 
 }
 
@@ -59,7 +60,7 @@ chain=new Slingshot(thrower.body,{x:200,y:100});
 function draw(){
 
     Engine.update(engine);
-    background(0)
+    background(204,204,0);
 thrower.display();
 platform1.display();
 platform2.display();
@@ -89,7 +90,7 @@ chain.display();
 }
 
 function mouseDragged(){
-Matter.Body.setPosition(thrower.body,{x:mouseX,y:mouseY})
+Matter.Body.setPosition(thrower.body,{x:mouseX,y:mouseY});
 
 }
 
